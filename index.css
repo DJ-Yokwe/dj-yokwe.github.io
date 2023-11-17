@@ -1,19 +1,41 @@
-* {
-  font-family: Helvetica;
-  text-align: center;
+body {
+  margin: 0;
+  border: 0;
+  font-family: 'Roboto Mono', monospace;
 }
 
-nav {
-  background-color: skyblue;
-  border: 5px solid black;
-  font-size: 24px;
-  margin: auto;
-  text-align: flex-start;
-}
-
-nav li {
+.pages {
   display: inline-flex;
+  text-align: center;
+  margin: auto;
+}
+
+.pages p {
   padding: 10px;
-  color: blue;
-  text-decoration: underline;
+  color: white;
+  background-color: darkgreen;
+  border: 2px solid darkgreen;
+  margin-right: 5px;
+  border-radius: 5px;
+}
+
+.pages p:hover {
+  color: darkgreen;
+  background-color: white;
+  border: 2px solid darkgreen;
+  cursor: pointer;
+}
+
+.pages p:active {
+  font-weight: bold;
+}
+
+.pages p a {
+  color: white;
+  text-decoration: none;
+}
+
+img {
+  width: 400pz;
+  height: 500px;
 }
