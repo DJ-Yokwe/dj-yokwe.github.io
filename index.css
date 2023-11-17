@@ -4,5 +4,6 @@
 
 nav li {
   display: inline-flex;
-  justify: flex-center;
+  justify-content: center;
+  padding: 10px;
 }
