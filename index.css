@@ -5,6 +5,7 @@
 nav {
   background-color: skyblue;
   justify-content: center;
+  margin: auto;
 }
 
 nav li {
