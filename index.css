@@ -2,10 +2,15 @@
   font-family: Helvetica;
 }
 
+nav {
+  background-color: skyblue;
+  justify-content: center;
+}
+
 nav li {
   display: inline-flex;
   justify-content: center;
   padding: 10px;
   color: blue;
-  text-decoration; underline;
+  text-decoration: underline;
 }
