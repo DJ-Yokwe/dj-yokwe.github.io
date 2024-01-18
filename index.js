@@ -1,5 +1,5 @@
 $(document).ready(function() {
-  $(".test").hover(function() {
+  $(".test").mouseenter(function() {
     $("p").hide("slow");
   });
 });
