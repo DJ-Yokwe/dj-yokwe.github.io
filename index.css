@@ -35,6 +35,10 @@ body {
   text-decoration: none;
 }
 
+.test {
+  color: yellow;
+}
+
 img {
   width: 400pz;
   height: 500px;
