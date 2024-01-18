@@ -1,5 +1,5 @@
 $(document).ready(function() {
   $(".test").click(function() {
-    $("p").hide("slow");
+    $("p").hideToggle("slow");
   });
 });
