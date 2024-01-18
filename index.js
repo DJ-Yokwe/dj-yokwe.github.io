@@ -1,3 +1,3 @@
-$(".test").click() {
+$(".test").click(function() {
   $(".test").hide("slow");
-}
+)}
