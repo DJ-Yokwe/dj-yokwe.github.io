@@ -36,7 +36,7 @@ body {
 }
 
 .test {
-  color: yellow;
+  color: yellow !important;
 }
 
 img {
