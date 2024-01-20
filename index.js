@@ -3,7 +3,7 @@ $(document).ready(function() {
     $("p").toggle();
   });
 
-  $(".submit").click(function() {
-    $(".test").get();
+  $("#submit").click(function() {
+    $("#test").get();
   });
 });
