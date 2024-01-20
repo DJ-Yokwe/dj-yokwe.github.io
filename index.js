@@ -7,7 +7,7 @@ $(document).ready(function() {
   });
 
   $("#submit").click(function() {
-    results = $("#test").get();
+    results = $("#test").val();
     results = results.toUpperCase();
     $("#test").val(results);
   });
