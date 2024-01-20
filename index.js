@@ -13,5 +13,6 @@ $(document).ready(function() {
   results = String(results);
   results = results.toUpperCase();
   $("#test").text(results);
+  $("#test").val(results);
   
 });
