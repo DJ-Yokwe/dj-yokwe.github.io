@@ -10,6 +10,8 @@ $(document).ready(function() {
     results = $("#test").get();
   });
 
+  console.log(results);
+  
   results = results.toUpperCase();
   console.log(results);
   $("#test").set(results);
