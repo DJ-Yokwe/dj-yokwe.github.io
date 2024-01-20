@@ -10,7 +10,7 @@ $(document).ready(function() {
     results = $("#test").get();
   });
 
-  console.log(results);
+  results = String(results);
   
   results = results.toUpperCase();
   console.log(results);
