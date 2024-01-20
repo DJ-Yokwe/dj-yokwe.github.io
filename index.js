@@ -14,6 +14,6 @@ $(document).ready(function() {
   
   results = results.toUpperCase();
   console.log(results);
-  $("#test").set(results);
+  $("#test").text(results);
   
 });
