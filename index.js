@@ -1,9 +1,16 @@
 $(document).ready(function() {
+
+  var results;
+  
   $(".test").click(function() {
     $("p").toggle();
   });
 
   $("#submit").click(function() {
-    $("#test").get();
+    results = $("#test").get();
   });
+
+  results = results.toUpper();
+  $("#test").set(results);
+  
 });
