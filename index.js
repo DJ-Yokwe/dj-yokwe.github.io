@@ -8,7 +8,6 @@ $(document).ready(function() {
 
   $("#submit").click(function() {
     results = $("#test").get();
-    results = String(results);
     results = results.toUpperCase();
     $("#test").val(results);
   });
