@@ -11,9 +11,7 @@ $(document).ready(function() {
   });
 
   results = String(results);
-  
   results = results.toUpperCase();
-  console.log(results);
   $("#test").text(results);
   
 });
