@@ -11,7 +11,7 @@ $(document).ready(function() {
       //results = results.toUpperCase();
   
       const apiUrl = "https://api.openai.com/v1/completions";
-      const apiKey = "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"; // Replace with your actual API key
+      const apiKey = "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"; // Replace with your actual API key
   
       const headers = {
           "Content-Type": "application/json",
@@ -19,7 +19,7 @@ $(document).ready(function() {
       };
   
       const data = {
-          model: "davinci-codex",
+          model: ".babbage-002",
           prompt: "Make up a name for a giant crocodile",
           max_tokens: 100
           // You can customize other parameters like temperature, frequency_penalty, etc.
