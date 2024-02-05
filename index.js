@@ -19,7 +19,7 @@ $(document).ready(function() {
       };
   
       const data = {
-          model: "davinci-002",
+          model: "gpt-3.5-turbo",
           prompt: "Who invented the airplane?",
           max_tokens: 20
           // You can customize other parameters like temperature, frequency_penalty, etc.
