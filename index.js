@@ -31,7 +31,7 @@ $(document).ready(function() {
           headers: headers,
           data: JSON.stringify(data),
           success: function (response) {
-              const generatedText = response.choices[0].text;
+              const generatedText = response.choices[0].message.content;
               //var formattedText = generatedText.replace(/\n/g, '\r\n');
               $("#test").val(generatedText);
               // Handle or display the generated text as needed
