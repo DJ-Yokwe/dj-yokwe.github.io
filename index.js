@@ -32,8 +32,8 @@ $(document).ready(function() {
           data: JSON.stringify(data),
           success: function (response) {
               const generatedText = response.choices[0].text;
-              var formattedText = generatedText.replace(/\n/g, '\r\n');
-              $("#test").val(formattedText);
+              //var formattedText = generatedText.replace(/\n/g, '\r\n');
+              $("#test").val(generatedText);
               // Handle or display the generated text as needed
           },
           error: function (error) {
