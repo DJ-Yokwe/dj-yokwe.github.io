@@ -7,11 +7,11 @@ $(document).ready(function() {
   });
 
   $("#submit").click(function() {
-      //results = $("#test").val();
+      results = $("#test").val();
       //results = results.toUpperCase();
   
       const apiUrl = "https://api.openai.com/v1/completions";
-      const apiKey = "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"; // Replace with your actual API key
+      const apiKey = "${results}"; // Replace with your actual API key
   
       const headers = {
           "Content-Type": "application/json",
