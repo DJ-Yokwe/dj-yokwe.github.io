@@ -10,7 +10,7 @@ $(document).ready(function() {
       results = $("#test").val();
       //results = results.toUpperCase();
   
-      const apiUrl = "https://api.openai.com/v1/completions";
+      const apiUrl = "https://api.openai.com/v1/chat/completions";
       const apiKey = results; // Replace with your actual API key
   
       const headers = {
