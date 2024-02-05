@@ -32,7 +32,8 @@ $(document).ready(function() {
           data: JSON.stringify(data),
           success: function (response) {
               const generatedText = response.choices[0].text;
-              $("#test").val(generatedText);
+              var encodedText = encodeURIComponent(generatedText);
+              $("#test").val(encodedText);
               // Handle or display the generated text as needed
           },
           error: function (error) {
