@@ -21,7 +21,7 @@ $(document).ready(function() {
       const data = {
           model: "gpt-3.5-turbo",
           messages: [{"role": "user", "content": "Who invented the airplane?"}],
-          max_tokens: 20
+          max_tokens: 100
           // You can customize other parameters like temperature, frequency_penalty, etc.
       };
 
