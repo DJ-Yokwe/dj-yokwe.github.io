@@ -19,7 +19,7 @@ $(document).ready(function() {
       };
   
       const data = {
-          model: "text-davinci-003",
+          model: "davinci-codex",
           prompt: "Make up a name for a giant crocodile",
           max_tokens: 100
           // You can customize other parameters like temperature, frequency_penalty, etc.
