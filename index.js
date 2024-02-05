@@ -19,7 +19,7 @@ $(document).ready(function() {
       };
   
       const data = {
-          model: ".babbage-002",
+          model: "davinci-002",
           prompt: "Make up a name for a giant crocodile",
           max_tokens: 100
           // You can customize other parameters like temperature, frequency_penalty, etc.
