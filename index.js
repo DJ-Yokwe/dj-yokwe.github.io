@@ -11,7 +11,7 @@ $(document).ready(function() {
       //results = results.toUpperCase();
   
       const apiUrl = "https://api.openai.com/v1/completions";
-      const apiKey = "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"; // Replace with your actual API key
+      const apiKey = "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"; // Replace with your actual API key
   
       const headers = {
           "Content-Type": "application/json",
