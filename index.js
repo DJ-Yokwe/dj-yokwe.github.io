@@ -10,7 +10,7 @@ $(document).ready(function() {
       //results = $("#test").val();
       //results = results.toUpperCase();
   
-      const apiUrl = "https://api.openai.com/v1/engines/davinci-codex/completions";
+      const apiUrl = "https://api.openai.com/v1/completions";
       const apiKey = "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"; // Replace with your actual API key
   
       const headers = {
