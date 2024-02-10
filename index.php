@@ -19,6 +19,7 @@ try {
 $sql = "SELECT api_id FROM gpt_api";
 $stmt = $pdo->query($sql);
 
+echo json_encode($stmt);
 // Fetching results
 //while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
     // Process each row
