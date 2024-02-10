@@ -18,7 +18,7 @@ $(document).ready(function() {
           success: function(data) {
               // 'data' contains the response from the server (PHP file)
               // Now you can use this data in your jQuery code
-              let results = html(data);
+              let results = data;
           },
           error: function() {
               $('#result').html('Error retrieving PHP variable.');
