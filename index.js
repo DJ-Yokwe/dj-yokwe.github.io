@@ -16,7 +16,7 @@ $(document).ready(function() {
           success: function(php_result) {
               // 'data' contains the response from the server (PHP file)
               // Now you can use this data in your jQuery code
-              keyVal = php_result;
+              keyVal = php_result.message;
               $("#test").val(keyVal);
 
               const apiUrl = "https://api.openai.com/v1/chat/completions";
