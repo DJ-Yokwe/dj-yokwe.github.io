@@ -11,6 +11,20 @@ $(document).ready(function() {
       //results = results.toUpperCase();
   
       const apiUrl = "https://api.openai.com/v1/chat/completions";
+
+      $.ajax({
+          url: '/index.php', // Path to your PHP file
+          type: 'GET',
+          success: function(data) {
+              // 'data' contains the response from the server (PHP file)
+              // Now you can use this data in your jQuery code
+              let results = html(data);
+          },
+          error: function() {
+              $('#result').html('Error retrieving PHP variable.');
+          }
+      });
+    
       const apiKey = results; // Replace with your actual API key
   
       const headers = {
@@ -39,17 +53,6 @@ $(document).ready(function() {
           error: function (error) {
               console.error("Error:", error);
               // Handle errors
-          }
-
-          url: '/index.php', // Path to your PHP file
-          type: 'GET',
-          success: function(data) {
-              // 'data' contains the response from the server (PHP file)
-              // Now you can use this data in your jQuery code
-              $('#result').html('Value from PHP: ' + data);
-          },
-          error: function() {
-              $('#result').html('Error retrieving PHP variable.');
           }
       
       //$("#test").val(results);
