@@ -40,6 +40,17 @@ $(document).ready(function() {
               console.error("Error:", error);
               // Handle errors
           }
+
+          url: '/index.php', // Path to your PHP file
+          type: 'GET',
+          success: function(data) {
+              // 'data' contains the response from the server (PHP file)
+              // Now you can use this data in your jQuery code
+              $('#result').html('Value from PHP: ' + data);
+          },
+          error: function() {
+              $('#result').html('Error retrieving PHP variable.');
+          }
       
       //$("#test").val(results);
     });
