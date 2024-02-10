@@ -9,9 +9,6 @@ $(document).ready(function() {
   $("#submit").click(function() {
       results = $("#test").val();
       //results = results.toUpperCase();
-  
-      const apiUrl = "https://api.openai.com/v1/chat/completions";
-      const keyVal;
 
       $.ajax({
           url: '/index.php', // Path to your PHP file
@@ -24,21 +21,23 @@ $(document).ready(function() {
           error: function() {
               keyVal = '';
           }
+
+          const apiUrl = "https://api.openai.com/v1/chat/completions";
+          const apiKey = keyVal; // Replace with your actual API key
+      
+          const headers = {
+              "Content-Type": "application/json",
+              "Authorization": `Bearer ${apiKey}`
+          };
+      
+          const data = {
+              model: "gpt-3.5-turbo",
+              messages: [{"role": "user", "content": "Who invented the airplane?"}],
+              max_tokens: 100
+              // You can customize other parameters like temperature, frequency_penalty, etc.
+          };
+
       });
-    
-      const apiKey = keyVal; // Replace with your actual API key
-  
-      const headers = {
-          "Content-Type": "application/json",
-          "Authorization": `Bearer ${apiKey}`
-      };
-  
-      const data = {
-          model: "gpt-3.5-turbo",
-          messages: [{"role": "user", "content": "Who invented the airplane?"}],
-          max_tokens: 100
-          // You can customize other parameters like temperature, frequency_penalty, etc.
-      };
 
       $.ajax({
           type: "POST",
