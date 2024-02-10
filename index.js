@@ -11,7 +11,7 @@ $(document).ready(function() {
       //results = results.toUpperCase();
 
       $.ajax({
-          url: '/index.php', // Path to your PHP file
+          url: 'index.php', // Path to your PHP file
           type: 'GET',
           success: function(php_result) {
               // 'data' contains the response from the server (PHP file)
