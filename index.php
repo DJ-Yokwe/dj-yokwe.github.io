@@ -28,7 +28,7 @@ $stmt = $pdo->query($sql);
 // Close the connection
 $pdo = null;
 
-$test = 'message' => "test";
-echo json_encode($test);
+$test = json_encode("test");
+echo $test;
 
 ?>
