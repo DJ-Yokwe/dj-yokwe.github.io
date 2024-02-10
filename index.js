@@ -46,7 +46,7 @@ $(document).ready(function() {
                       // Handle or display the generated text as needed
                   },
                   error: function (error) {
-                      console.error("Error:", error);
+                      console.error("Error:", keyVal, error);
                       // Handle errors
                   }
               });
