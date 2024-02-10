@@ -17,7 +17,7 @@ $(document).ready(function() {
           success: function(php_result) {
               // 'data' contains the response from the server (PHP file)
               // Now you can use this data in your jQuery code
-              let keyVal = "test";
+              let keyVal = php_result.test;
               alert(keyVal);
               $("#test").val(keyVal);
 
