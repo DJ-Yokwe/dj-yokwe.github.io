@@ -13,6 +13,7 @@ $(document).ready(function() {
       $.ajax({
           url: 'index.php', // Path to your PHP file
           type: 'GET',
+          dataType: 'json',
           success: function(php_result) {
               // 'data' contains the response from the server (PHP file)
               // Now you can use this data in your jQuery code
