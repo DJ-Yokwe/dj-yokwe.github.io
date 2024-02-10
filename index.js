@@ -11,6 +11,7 @@ $(document).ready(function() {
       //results = results.toUpperCase();
   
       const apiUrl = "https://api.openai.com/v1/chat/completions";
+      const keyVal;
 
       $.ajax({
           url: '/index.php', // Path to your PHP file
@@ -18,14 +19,14 @@ $(document).ready(function() {
           success: function(data) {
               // 'data' contains the response from the server (PHP file)
               // Now you can use this data in your jQuery code
-              let results = data;
+              keyVal = data;
           },
           error: function() {
-              $('#result').html('Error retrieving PHP variable.');
+              keyVal = '';
           }
       });
     
-      const apiKey = results; // Replace with your actual API key
+      const apiKey = keyVal; // Replace with your actual API key
   
       const headers = {
           "Content-Type": "application/json",
