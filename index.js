@@ -13,10 +13,10 @@ $(document).ready(function() {
       $.ajax({
           url: '/index.php', // Path to your PHP file
           type: 'GET',
-          success: function(data) {
+          success: function(php_result) {
               // 'data' contains the response from the server (PHP file)
               // Now you can use this data in your jQuery code
-              keyVal = data;
+              keyVal = php_result;
 
               const apiUrl = "https://api.openai.com/v1/chat/completions";
               const apiKey = keyVal; // Replace with your actual API key
