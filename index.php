@@ -21,10 +21,10 @@ $stmt = $pdo->query($sql);
 
 echo json_encode(['message' => $stmt]);
 // Fetching results
-//while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
+while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
     // Process each row
-    //echo "ID: " . $row['id'] . ", Name: " . $row['name'] . "<br>";
-//}
+    echo json_encode(['message' => "ID: " . $row['id'] . ", Name: " . $row['name'] . "<br>"]);
+}
 
 // Close the connection
 $pdo = null;
