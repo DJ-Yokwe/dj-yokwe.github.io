@@ -16,15 +16,7 @@ $(document).ready(function() {
           success: function(php_result) {
               // 'data' contains the response from the server (PHP file)
               // Now you can use this data in your jQuery code
-              const xmlhttp = new XMLHttpRequest();
-
-              xmlhttp.onload = function() {
-                const myObj = JSON.parse(this.responseText);
-              }
-              xmlhttp.open("GET", "index.php");
-              xmlhttp.send();
-            
-              keyVal = myObj;
+              let keyVal = myObj;
               alert(keyVal);
               $("#test").val(keyVal);
 
