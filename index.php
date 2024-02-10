@@ -20,13 +20,14 @@ $sql = "SELECT api_id FROM gpt_api";
 $stmt = $pdo->query($sql);
 
 // Fetching results
-while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
+//while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
     // Process each row
     //echo json_encode(['message' => "ID: " . $row['id'] . ", Name: " . $row['name'] . "<br>"]);
-    echo json_encode(['message' => "test"]);
-}
+//}
 
 // Close the connection
 $pdo = null;
+
+echo json_encode(['message' => "test"]);
 
 ?>
