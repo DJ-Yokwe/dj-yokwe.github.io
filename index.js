@@ -22,7 +22,7 @@ $(document).ready(function() {
               $("#test").val(keyVal);
 
               const apiUrl = "https://api.openai.com/v1/chat/completions";
-              const apiKey = keyVal; // Replace with your actual API key
+              const apiKey = results; // Replace with your actual API key
           
               const headers = {
                   "Content-Type": "application/json",
