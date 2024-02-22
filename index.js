@@ -107,4 +107,25 @@ $(document).ready(function() {
       //$("#test").val(results);
     });
   });
+
+  var tag = document.createElement('script');
+	tag.src = 'https://www.youtube.com/iframe_api';
+	var firstScriptTag = document.getElementsByTagName('script')[0];
+	firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+
+	function onYouTubeIframeAPIReady() {
+	  player = new YT.Player('safetyVid', {
+		height: '315',
+		width: '560',
+		videoId: 'OI7nHzExxp4',
+	      events: {
+	        'onStateChange': onPlayerStateChange
+	      }
+	  });
+	}
+  	
+	function onPlayerStateChange(event) {
+		console.log(event.data);
+	  //$('[name="Next"]').prop('disabled', false);
+	}
 });
