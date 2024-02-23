@@ -136,4 +136,8 @@ $(document).ready(function() {
 	console.log(event.data);
 	  //$('[name="Next"]').prop('disabled', false);
   }
+
+  $('#safetyVid').addEventListener('ended', function() {
+	  console.log('Video Ended');
+  });
 });
