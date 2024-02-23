@@ -118,6 +118,14 @@ $(document).ready(function() {
 		height: '315',
 		width: '560',
 		videoId: 'OI7nHzExxp4',
+		playerVars: {
+			'autoplay': 1,
+			'controls': 0,
+			'rel': 0,
+			'showinfo': 0,
+			'fs': 1,
+			'modestbranding': 1
+		},
 		events: {
 			'onStateChange': onPlayerStateChange
 		}
