@@ -40,7 +40,7 @@
 				+ 'OI7nHzExxp4'
 				+ '?modestbranding=1' // Don't show YouTube logo in control bar
 				+ '&controls=0'
-				//+ '&autoplay=1'
+				+ '&enablejsapi=1'
 				+ '&rel=0'; // Only show related videos from our channel after playback
 	      		console.log(src);
 			document.querySelector('#safetyVid').setAttribute('src', src);
@@ -49,6 +49,28 @@
     				console.log('Video has ended');
   			});
 		}
+	// Listen for the 'message' event from the iframe
+    window.addEventListener('message', function(event) {
+    if (event.origin !== 'https://www.youtube.com') {
+      // Ensure the message is from a trusted source (YouTube)
+      return;
+    }
+
+    // Check if the event data contains the current time
+    if (event.data && event.data.event === 'timeupdate') {
+      var currentTime = event.data.info.currentTime;
+      console.log('Current Time: ' + currentTime);
+    }
+    });
+
+  // Function to send a request for the current time
+  function requestCurrentTime() {
+    var iframe = document.getElementById('safetyVid');
+    iframe.contentWindow.postMessage('requestTime', 'https://www.youtube.com');
+  }
+
+  // Example: Request the current time every second
+  setInterval(requestCurrentTime, 1000);
     </script>
     <div>
       <img src="./motorcycles.jpeg" />
