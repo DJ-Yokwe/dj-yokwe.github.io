@@ -48,35 +48,7 @@
 	      		document.querySelector('#safetyVid').addEventListener('ended', function () {
     				console.log('Video has ended');
   			});
-		}
-	  var tag = document.createElement('script');
-	  tag.src = 'https://www.youtube.com/iframe_api';
-	  var firstScriptTag = document.getElementsByTagName('script')[0];
-	  firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
-	
-	  function onYouTubeIframeAPIReady() {
-	  	player = new YT.Player('safetyVid', {
-			height: '315',
-			width: '560',
-			videoId: 'OI7nHzExxp4',
-			playerVars: {
-				'autoplay': 1,
-				'controls': 0,
-				'rel': 0,
-				'showinfo': 0,
-				'fs': 1,
-				'modestbranding': 1
-			},
-			events: {
-				'onStateChange': onPlayerStateChange
-			}
-		});
-	  }
-	  	
-	  function onPlayerStateChange(event) {
-		console.log(event.data);
-		  //$('[name="Next"]').prop('disabled', false);
-	  }
+	}
     </script>
     <div>
       <img src="./motorcycles.jpeg" />
