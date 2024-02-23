@@ -11,7 +11,7 @@
     <script src="./index.js"></script>
   </head>
   
-  <body>
+  <body onLoad="loadVideo()">
       <header>
         <nav class="navigation">
           <ul class="pages">
@@ -30,7 +30,7 @@
       <textarea rows="10" id="test"></textarea><br><br>
       <input type=submit value="Submit" id="submit">
     </div>
-    <div onLoad="loadVideo()">
+    <div>
       <iframe id='safetyVid' width="560" height="315" title="Safety Video"></iframe>
     </div>
     <script type="text/javascript">
