@@ -30,9 +30,19 @@
       <textarea rows="10" id="test"></textarea><br><br>
       <input type=submit value="Submit" id="submit">
     </div>
-    <div id='safetyVid'>
-      <!--<iframe id='safetyVid' width="560" height="315" src="https://www.youtube.com/embed/OI7nHzExxp4?si=Dz7GnSJ4pWBxWozi&amp;controls=0&amp;modestbranding=1&amp;rel=0&amp;autoplay=1&amp;mute=1&amp;start=1" title="Safety Video"></iframe>-->
+    <div onLoad="loadVideo()">
+      <iframe id='safetyVid' width="560" height="315" title="Safety Video"></iframe>
     </div>
+    <script type="text/javascript">
+      function loadVideo() {
+			let url = new URL(window.location.href);
+			let src = 'https://www.youtube.com/embed/'
+				+ 'OI7nHzExxp4'
+				+ '?modestbranding=1' // Don't show YouTube logo in control bar
+				+ '&rel=0'; // Only show related videos from our channel after playback
+			document.querySelector('#safetyVid').setAttribute('src', src);
+		}
+    </script>
     <div>
       <img src="./motorcycles.jpeg" />
     </div>
