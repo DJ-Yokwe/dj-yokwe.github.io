@@ -44,6 +44,10 @@
 				+ '&rel=0'; // Only show related videos from our channel after playback
 	      		console.log(src);
 			document.querySelector('#safetyVid').setAttribute('src', src);
+
+	      		document.querySelector('#safetyVid').addEventListener('ended', function () {
+    				console.log('Video has ended');
+  			});
 		}
     </script>
     <div>
