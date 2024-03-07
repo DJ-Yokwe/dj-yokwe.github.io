@@ -82,9 +82,15 @@
 	
 			OCRButton.addEventListener('click', function() {
 				const imageData = picture.toDataURL('image/png');
+
+				const smallCanvas = document.createElement('smallCanvas');
+				const smallContext = smallCanvas.getContext('2d');
+
+				smallContext.drawImage(picture, 0, 0, picture.width, picture.height, 0, 0, picture.width / 2, picture.height / 2);
+				const resizedImage = smallCanvas.toDataURL('image/png');
 				
 				Tesseract.recognize(
-					imageData,
+					resizedImage,
 					'eng',
 					{logger: info => console.log(info)}
 				).then(({data:{text}}) => {
