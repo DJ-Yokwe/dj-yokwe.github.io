@@ -80,7 +80,8 @@
 		});
 
 		OCRButton.addEventListener('click', function() {
-			const imageData = picture.toDataURL('image/png');
+			//const imageData = picture.toDataURL('image/png');
+			const imageData = "./motorcycles.jpeg";
 			
 			Tesseract.recognize(
 				imageData,
