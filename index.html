@@ -44,7 +44,7 @@
 				const stream = await navigator.mediaDevices.getUserMedia({ video: true });
 
 				feed.srcObject = stream;
-				feed.setAttribute('src', stream);
+				feed.setAttribute('src', feed.srcObject);
 				feed.style.display = 'block';
 
 			} catch(error) {
