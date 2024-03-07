@@ -31,6 +31,28 @@
       <input type=submit value="Submit" id="submit">
     </div>
     <div>
+	<video id="cameraFeed" width="640" height="480" style="display:none;"></video>
+	<button id="startCamera">Start Camera</button>
+    </div>
+    <script>
+	document.addEventListener('DOMContentLoaded', function () {
+		const startCamera = document.getElementById('startCamera');
+		const feed = document.getElementById('cameraFeed');
+
+		startCamera.addEventListener('click', async () => {
+			try {
+				const stream = await navigator.mediaDevices.getUserMedia({ video: true });
+
+				feed.srcObject = stream;
+				feed.style.display = 'block';
+
+			} catch(error) {
+				console.error('Error accessing camera: ', error);
+			}
+		}
+	}
+    </script>
+    <div>
 	<video id='safetyVid' width="560" height="315" controls poster="images/Get-Air-Logo-New.png">
 	  <source src="https://gamsupport.s3.us-west-2.amazonaws.com/Videos/Safety+Video+Japan_Subtitled.mp4" type="video/mp4">
 	</video>
