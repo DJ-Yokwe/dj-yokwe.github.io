@@ -85,13 +85,6 @@
 				'eng',
 				{logger: info => console.log(info)}
 			).then((response) => {
-				const circularRef = findCircularReferenceProperty(response);
-
-				if(circularRef) {
-					console.log('Circular reference found in: ' + circularRef);
-					response[circularRef] = null;
-				}
-
 				console.log(JSON.stringify(response));
 				
 				const text = response?.data?.text;
