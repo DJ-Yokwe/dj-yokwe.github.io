@@ -86,7 +86,7 @@
 				{logger: info => console.log(info)}
 			).then(({data:{text}}) => {
 				result.textContent = "OCR Result: " + text;
-			}).catch((error) => console.error('Error performing OCR: ', error);
+			}).catch((error) => console.error('Error performing OCR: ', error));
 		});
 	});
     </script>
