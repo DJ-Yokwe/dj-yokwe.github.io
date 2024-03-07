@@ -33,18 +33,22 @@
     <div>
 	<video id="cameraFeed" width="640" height="480" style="display:block;border:2px solid black;"></video>
 	<button id="startCamera">Start Camera</button>
+	<button id="capture">Take Picture</button>
+	<canvas id="capturedPicture" style="display:none;"></canvas>
     </div>
     <script>
 	document.addEventListener('DOMContentLoaded', function () {
 		const startCamera = document.getElementById('startCamera');
 		const feed = document.getElementById('cameraFeed');
+		const capture = document.getElementById('capture');
+		const picture = document.getElementById('capturedPicture');
+		const context = picture.getContext('2d');
 
 		startCamera.addEventListener('click', async () => {
 			try {
 				const stream = await navigator.mediaDevices.getUserMedia({ video: true });
 
 				feed.srcObject = stream;
-				//feed.setAttribute('src', feed.srcObject);
 				feed.onloadedmetadata = function(e) {
 					feed.play();
 				};
@@ -52,6 +56,20 @@
 
 			} catch(error) {
 				console.error('Error accessing camera: ', error);
+			}
+		});
+
+		capture.addEventListener('click', function() {
+			if(!feed.paused) {
+				picture.width = feed.videoWidth;
+				picture.heigth = feed.videoHeight;
+
+				context.drawImage(feed, 0, 0, feed.videoWidth, feed.videoHeight);
+
+				picture.style.display = 'block";
+			}
+			else {
+				console.error('Start video before capturing');
 			}
 		});
 	});
