@@ -84,12 +84,21 @@
 				picture,
 				'eng',
 				{logger: info => console.log(info)}
-			).then(({data:{text}}) => {
+			).then((response) => {
+				const text = response?.data?.text;
+				if (text === undefined) {
+					console.log('problem');
+				}
+				else {
+					console.log(text);
+				}
+			}).catch((error) => console.error('Error: ', error));
+			/*.then(({data:{text}}) => {
 				if(text === undefined) {
 					console.log('problem text');
 				}
 				result.textContent = "OCR Result: " + (text || 'No text recognized');
-			}).catch((error) => console.error('Error performing OCR: ', error));
+			}).catch((error) => console.error('Error performing OCR: ', error));*/
 		});
 	});
     </script>
