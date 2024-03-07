@@ -87,7 +87,7 @@
 			).then((response) => {
 				const text = response?.data?.text;
 				if (text === undefined) {
-					console.log('problem');
+					console.log('problem: ' + response);
 				}
 				else {
 					console.log(text);
