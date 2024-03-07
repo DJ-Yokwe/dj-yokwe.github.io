@@ -84,7 +84,7 @@
 				const imageData = picture.toDataURL('image/png');
 				
 				async function getTextFromImage() {
-					const worker = createWorker();
+					const worker = Tesseract.createWorker();
 					
 					await worker.load()
 					await worker.loadLanguage('eng')
