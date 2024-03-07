@@ -108,7 +108,7 @@ $(document).ready(function() {
     });
   });
 
-  var tag = document.createElement('script');
+  /*var tag = document.createElement('script');
   tag.src = 'https://www.youtube.com/iframe_api';
   var firstScriptTag = document.getElementsByTagName('script')[0];
   firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
@@ -139,5 +139,5 @@ $(document).ready(function() {
 
   $('#safetyVid').addEventListener('ended', function() {
 	  console.log('Video Ended');
-  });
+  });*/
 });
