@@ -31,7 +31,7 @@
       <input type=submit value="Submit" id="submit">
     </div>
     <div>
-	<video id="cameraFeed" width="640" height="480" style="display:none;"></video>
+	<video id="cameraFeed" width="640" height="480" style="display:block;width:100%;height:auto;border:2px solid black;"></video>
 	<button id="startCamera">Start Camera</button>
     </div>
     <script>
@@ -44,7 +44,7 @@
 				const stream = await navigator.mediaDevices.getUserMedia({ video: true });
 
 				feed.srcObject = stream;
-				feed.style.display = 'flex';
+				feed.style.display = 'block';
 
 			} catch(error) {
 				console.error('Error accessing camera: ', error);
