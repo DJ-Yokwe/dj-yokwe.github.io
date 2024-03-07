@@ -44,7 +44,7 @@
 				const stream = await navigator.mediaDevices.getUserMedia({ video: true });
 
 				feed.srcObject = stream;
-				feed.style.display = 'block';
+				feed.style.display = 'flex';
 
 			} catch(error) {
 				console.error('Error accessing camera: ', error);
