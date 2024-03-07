@@ -85,7 +85,7 @@
 				'eng',
 				{logger: info => console.log(info)}
 			).then(({data:{text}}) => {
-				result.textContent = "OCR Result: " + text;
+				result.textContent = "OCR Result: " + (text || 'No text recognized');
 			}).catch((error) => console.error('Error performing OCR: ', error));
 		});
 	});
