@@ -80,8 +80,10 @@
 		});
 
 		OCRButton.addEventListener('click', function() {
+			const imageData = picture.toDataURL('image/png');
+			
 			Tesseract.recognize(
-				picture,
+				imageData,
 				'eng',
 				{logger: info => console.log(info)}
 			).then((response) => {
