@@ -81,8 +81,29 @@
 
 		OCRButton.addEventListener('click', function() {
 			const imageData = picture.toDataURL('image/png');
+
+			const { createWorker } = require('tesseract.js')
+			const PSM = require('tesseract.js/src/constants/PSM.js')
 			
-			Tesseract.recognize(
+			async function getTextFromImage() {
+				await worker.load()
+				await worker.loadLanguage('eng')
+				await worker.initialize('eng')
+				await worker.setParameters({
+					tessedit_pageseg_mode: PSM.AUTO,
+				})
+			
+				const { data: { text } } = await worker.recognize(imageData);
+				
+				await worker.terminate()
+				
+				return text
+			}
+			
+			getTextFromImage()
+			  .then(console.log)
+			
+			/*Tesseract.recognize(
 				imageData,
 				'eng',
 				{logger: info => console.log(info)}
@@ -96,13 +117,7 @@
 				else {
 					console.log(text);
 				}
-			}).catch((error) => console.error('Error: ', error));
-			/*.then(({data:{text}}) => {
-				if(text === undefined) {
-					console.log('problem text');
-				}
-				result.textContent = "OCR Result: " + (text || 'No text recognized');
-			}).catch((error) => console.error('Error performing OCR: ', error));*/
+			}).catch((error) => console.error('Error: ', error));*/
 		});
 	});
     </script>
