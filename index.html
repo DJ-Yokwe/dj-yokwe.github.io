@@ -92,7 +92,12 @@
 				Tesseract.recognize(
 					resizedImage,
 					'eng',
-					{logger: info => console.log(info)}
+					{
+						logger: info => console.log(info),
+						config: {
+							preserve_interword_spaces: '1',
+						},
+					}
 				).then(({data:{text}}) => {
 					console.log('Result: ' + text);
 				}).catch((error) => console.error('Error: ', error));
