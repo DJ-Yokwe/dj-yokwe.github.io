@@ -43,7 +43,8 @@
 			try {
 				const stream = await navigator.mediaDevices.getUserMedia({ video: true });
 
-				feed.srcObject = stream;
+				//feed.srcObject = stream;
+				feed.setAttribute('src', stream);
 				feed.style.display = 'block';
 
 			} catch(error) {
