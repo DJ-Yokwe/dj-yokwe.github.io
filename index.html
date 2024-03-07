@@ -81,9 +81,6 @@
 
 		OCRButton.addEventListener('click', function() {
 			const imageData = picture.toDataURL('image/png');
-
-			const { createWorker } = require('tesseract.js')
-			const PSM = require('tesseract.js/src/constants/PSM.js')
 			
 			async function getTextFromImage() {
 				await worker.load()
