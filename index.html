@@ -85,7 +85,7 @@
 
 			img.onload = function() {
 				const preprocessCanvas = document.getElementById('capturedPicture');
-				const preprocessContext = preprocessCanvas.getContect('2d');
+				const preprocessContext = preprocessCanvas.getContext('2d');
 
 				preprocessCanvas.width = img.width / 2;
 				preprocessCanvas.height = img.height / 2;
