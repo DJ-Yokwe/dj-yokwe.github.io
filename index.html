@@ -83,6 +83,8 @@
 			const imageData = picture.toDataURL('image/png');
 			
 			async function getTextFromImage() {
+				const worker = createWorker();
+				
 				await worker.load()
 				await worker.loadLanguage('eng')
 				await worker.initialize('eng')
@@ -92,7 +94,7 @@
 			
 				const { data: { text } } = await worker.recognize(imageData);
 				
-				await worker.terminate()
+				worker.terminate()
 				
 				return text
 			}
