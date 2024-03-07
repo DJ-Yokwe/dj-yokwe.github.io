@@ -9,6 +9,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <script src="https://www.youtube.com/iframe_api"></script>
     <script src="./index.js"></script>
+    <script src="https://cdn.rawgit.com/naptha/tesseract.js/1.0.10/dist/tesseract.js"></script>
   </head>
   
   <body>
@@ -33,8 +34,11 @@
     <div>
 	<video id="cameraFeed" width="640" height="480" style="display:block;border:2px solid black;"></video>
 	<button id="startCamera">Start Camera</button>
+	<button id="stopCamera">Stop Camera</button>
 	<button id="capture">Take Picture</button>
 	<canvas id="capturedPicture" style="display:none;"></canvas>
+	<button id="performOCR">Perform OCR</button>
+	<div id="result"></div>
     </div>
     <script>
 	document.addEventListener('DOMContentLoaded', function () {
@@ -43,6 +47,8 @@
 		const capture = document.getElementById('capture');
 		const picture = document.getElementById('capturedPicture');
 		const context = picture.getContext('2d');
+		const OCRButton = document.getElementById('performOCR');
+		const result = document.getElementById('result');
 
 		startCamera.addEventListener('click', async () => {
 			try {
@@ -71,6 +77,16 @@
 			else {
 				console.error('Start video before capturing');
 			}
+		});
+
+		OCRButton.addEventListener('click', function() {
+			Tesseract.recognize(
+				picture,
+				'eng',
+				{logger: info => console.log(info)}
+			).then(({data:{text}}) => {
+				result.textContent = "OCR Result: " + text;
+			}).catch((error) => console.error('Error performing OCR: ', error);
 		});
 	});
     </script>
