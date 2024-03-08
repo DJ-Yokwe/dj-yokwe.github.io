@@ -89,22 +89,23 @@
 				let width = picture.width;
 				let height = picture.height;
 
+				let targetWidth = 640;
+				let targetHeight = 480;
+
 				const aspectRatio = width / height;
 
 				if (width > height) {
-					width = 640;
-					height = width / aspectRatio;
+					targetHeight = targetWidth / aspectRatio;
 				} else {
-					height = 480;
-					width = height * aspectRatio;
+					targetWidth = targetHeight * aspectRatio;
 				}
 
 				document.getElementById('result').innerHTML = '<canvas id="resizeResult"></canvas>';
 				const smallImage = document.getElementById('resizeResult');
 				const smallImageContext = smallImage.getContext('2d');
 
-				smallImage.width = width;
-				smallImage.height = height;
+				smallImage.width = targetWidth;
+				smallImage.height = targetHeight;
 
 				smallImageContext.drawImage(picture, 0, 0, picture.width, picture.height, 0, 0, smallImage.width, smallImage.height);
 				const resizedImage = smallImage.toDataURL('image/png');
