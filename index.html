@@ -99,8 +99,8 @@
 				smallContext.drawImage(picture, 0, 0, smallCanvas.width, smallCanvas.height);
 
 				smallContext.strokeStyle = 'red';
-				context.lineWidth = 2;
-				context.strokeRect(roi.left, roi.top, roi.width, roi.height);
+				smallContext.lineWidth = 2;
+				smallContext.strokeRect(roi.left, roi.top, roi.width, roi.height);
 
 				document.getElementById('result').appendChild(smallCanvas);
 				
