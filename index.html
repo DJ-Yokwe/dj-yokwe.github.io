@@ -165,6 +165,16 @@
 					}
 				).then(({data:{text}}) => {
 					console.log('Result: ' + text);
+
+					const dobRegex = /\b\d{1,2}\/\d{1,2}\/\d{4}\b/;
+					const dobMatch = text.match(dobRegex);
+					if (dobMatch) {
+						const dob = dobMatch[0];
+						outputElement.textContent = 'Date of Birth: ' + dob;
+					} else {
+						outputElement.textContent = 'Date of Birth not found.';
+					}
+					
 				}).catch((error) => console.error('Error: ', error));
 			});
 		});
