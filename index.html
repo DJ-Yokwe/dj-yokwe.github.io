@@ -89,11 +89,13 @@
 				let width = picture.width;
 				let height = picture.height;
 
-				const aspectRatio = width/height;
+				const aspectRatio = width / height;
 
 				if (width > height) {
+					width = 640;
 					height = width / aspectRatio;
 				} else {
+					height = 480;
 					width = height * aspectRatio;
 				}
 
