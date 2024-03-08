@@ -104,7 +104,7 @@
 				smallImage.width = width;
 				smallImage.height = height;
 
-				smallImageContext.drawImage(picture, 0, 0, picture.width, picture.height, smallImage, 0, 0, smallImage.width, smallImage.height);
+				smallImageContext.drawImage(picture, 0, 0, picture.width, picture.height, 0, 0, smallImage.width, smallImage.height);
 				const resizedImage = smallImage.toDataURL('image/png');
 				
 				Tesseract.recognize(
