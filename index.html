@@ -86,12 +86,14 @@
 				const smallCanvas = document.createElement('canvas');
 				const smallContext = smallCanvas.getContext('2d');
 
+				smallCanvas.id='resizeResult';
 				smallCanvas.width = picture.width / 2;
 				smallCanvas.height = picture.height / 2;
 
-				smallContext.drawImage(picture, 0, 0, picture.width, picture.height, 0, 0, smallCanvas.width, smallCanvas.height);
-				smallCanvas.setAttribute('id', 'resizedImage');
-				smallCanvas.style.display = 'block';
+				smallContext.drawImage(document.createElement('img'), 0, 0, smallCanvas.width, smallCanvas.height);
+
+				document.getElementById('result').appendChild(smallCavas);
+				
 				const resizedImage = smallCanvas.toDataURL('image/png');
 				
 				Tesseract.recognize(
