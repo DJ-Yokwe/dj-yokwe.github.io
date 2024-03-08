@@ -86,29 +86,12 @@
 				const smallCanvas = document.createElement('canvas');
 				const smallContext = smallCanvas.getContext('2d');
 
-				let width = picture.width;
-				let height = picture.height;
+				smallCanvas.width = picture.width / 2;
+				smallCanvas.height = picture.height / 2;
 
-				let targetWidth = 640;
-				let targetHeight = 480;
-
-				const aspectRatio = width / height;
-
-				if (width > height) {
-					targetHeight = targetWidth / aspectRatio;
-				} else {
-					targetWidth = targetHeight * aspectRatio;
-				}
-
-				document.getElementById('result').innerHTML = '<canvas id="resizeResult"></canvas>';
-				const smallImage = document.getElementById('resizeResult');
-				const smallImageContext = smallImage.getContext('2d');
-
-				smallImage.width = targetWidth;
-				smallImage.height = targetHeight;
-
-				smallImageContext.drawImage(picture, 0, 0, picture.width, picture.height, 0, 0, smallImage.width, smallImage.height);
-				const resizedImage = smallImage.toDataURL('image/png');
+				smallContext.drawImage(picture, 0, 0, picture.width, picture.height, 0, 0, smallCanvas.width, smallCanvas.height);
+				smallCanvas.show();
+				const resizedImage = smallCanvas.toDataURL('image/png');
 				
 				Tesseract.recognize(
 					resizedImage,
