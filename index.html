@@ -135,8 +135,8 @@
 				const croppedCanvas = document.createElement('canvas');
 				const croppedContext = croppedCanvas.getContext('2d');
 
-				croppedCanvas.width = 640;
-				croppedCanvas.height = 480;
+				croppedCanvas.width = roi.width * 2;
+				croppedCanvas.height = roi.height * 2;
 
 				croppedContext.drawImage(
 					smallCanvas,
@@ -146,8 +146,8 @@
 					roi.height,
 					0,
 					0,
-					640,
-					480
+					roi.width * 2,
+					roi.height * 2
 				);
 
 				document.getElementById('result').appendChild(croppedCanvas);
