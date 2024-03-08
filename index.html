@@ -84,7 +84,7 @@
 				const imageData = picture.toDataURL('image/png');
 
 				const smallCanvas = document.createElement('canvas');
-				const smallContext = smallCanvas.getContext('2d');
+				//const smallContext = smallCanvas.getContext('2d');
 
 				let width = picture.width;
 				let height = picture.height;
@@ -97,13 +97,15 @@
 					width = height * aspectRatio;
 				}
 
-				picture.width = width;
-				picture.height = height;
+				document.getElementById('result').innerHTML = '<canvas id="resizeResult"></canvas>';
+				const smallImage = document.getElementById('resizeResult');
+				const smallContext = smallImage.getContext('2d');
 
-				context.drawImage(picture, 0, 0, width, height);
-				const resizedImage = picture.toDataURL('image/png');
+				smallImage.width = width;
+				smallImage.height = height;
 
-				//document.getElementById('result').innerHTML = '<img src="${resizedImage}">';
+				smallContext.drawImage(picture, 0, 0, width, height);
+				const resizedImage = smallImage.toDataURL('image/png');
 				
 				Tesseract.recognize(
 					resizedImage,
