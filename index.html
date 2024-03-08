@@ -90,6 +90,7 @@
 				smallCanvas.height = picture.height / 2;
 
 				smallContext.drawImage(picture, 0, 0, picture.width, picture.height, 0, 0, smallCanvas.width, smallCanvas.height);
+				smallCanvas.setAttribute('id', 'resizedImage');
 				smallCanvas.style.display = 'block';
 				const resizedImage = smallCanvas.toDataURL('image/png');
 				
