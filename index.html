@@ -32,7 +32,7 @@
       <input type=submit value="Submit" id="submit">
     </div>
     <div>
-	<video id="cameraFeed" width="640" height="480" style="display:block;border:2px solid black;"></video>
+	<video id="cameraFeed" width="640" height="480" style="display:none;border:2px solid black;"></video>
 	<canvas id="cameraCanvas"></canvas>
 	<button id="startCamera">Start Camera</button>
 	<button id="stopCamera">Stop Camera</button>
@@ -61,9 +61,9 @@
 						feed.play();
 					};
 					feed.onplay = function() {
-						setTimeout(drawFrame, 300);
+						setTimeout(drawFrame, 100);
 					}
-					feed.style.display = 'block';
+					//feed.style.display = 'block';
 	
 				} catch(error) {
 					console.error('Error accessing camera: ', error);
@@ -88,18 +88,20 @@
 				var video = document.querySelector("#cameraFeed");
 				var canvas = document.querySelector("#cameraCanvas");
 				var context = canvas.getContext('2d');
+
+				const roi = {
+					left:100,
+					top:50,
+					width:200,
+					height: 100,
+				};
 				
 				canvas.width = video.videoWidth;
 				canvas.height = video.videoHeight;
 				
-				
 				context.drawImage(video, 0, 0, canvas.width, canvas.height);
 				
-				var faceArea = 300;
-				var pX=canvas.width/2 - faceArea/2;
-				var pY=canvas.height/2 - faceArea/2;
-				
-				context.rect(pX,pY,faceArea,faceArea);
+				context.rect(roi.left,roi.top,roi.width,roi.height);
 				context.lineWidth = "2";
 				context.strokeStyle = "red";    
 				context.stroke();
