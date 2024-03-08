@@ -99,6 +99,8 @@
 
 				smallContext.drawImage(picture, 0, 0, width, height);
 				const resizedImage = smallCanvas.toDataURL('image/png');
+
+				document.getElementById('result').innerHTML = '<img src="${resizedImage}">';
 				
 				Tesseract.recognize(
 					resizedImage,
