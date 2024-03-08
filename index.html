@@ -97,8 +97,8 @@
 					width = height * aspectRatio;
 				}
 
-				smallContext.drawImage(picture, 0, 0, width, height);
-				const resizedImage = smallCanvas.toDataURL('image/png');
+				context.drawImage(picture, 0, 0, width, height);
+				const resizedImage = picture.toDataURL('image/png');
 
 				document.getElementById('result').innerHTML = '<img src="${resizedImage}">';
 				
