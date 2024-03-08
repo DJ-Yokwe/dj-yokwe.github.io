@@ -39,6 +39,7 @@
 	<button id="capture">Take Picture</button>
 	<canvas id="capturedPicture" style="display:none;"></canvas>
 	<button id="performOCR">Perform OCR</button>
+	<pre id="output"></pre>
 	<div id="result"></div>
     </div>
     <script>
@@ -111,6 +112,7 @@
 			}
 	
 			OCRButton.addEventListener('click', function() {
+				const outputElement = document.getElementById('output');
 				const imageData = picture.toDataURL('image/png');
 				const roi = {
 					left:100,
