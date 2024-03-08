@@ -86,7 +86,18 @@
 				const smallCanvas = document.createElement('canvas');
 				const smallContext = smallCanvas.getContext('2d');
 
-				smallContext.drawImage(picture, 0, 0, picture.width, picture.height, 0, 0, picture.width / 2, picture.height / 2);
+				let width = picture.width;
+				let height = picture.height;
+
+				const aspectRatio = width/height;
+
+				if (width > height) {
+					height = width / aspectRatio;
+				} else {
+					width = height * aspectRatio;
+				}
+
+				smallContext.drawImage(picture, 0, 0, width, height);
 				const resizedImage = smallCanvas.toDataURL('image/png');
 				
 				Tesseract.recognize(
