@@ -60,6 +60,9 @@
 					feed.onloadedmetadata = function(e) {
 						feed.play();
 					};
+					feed.onplay = function() {
+						setTimeout(drawFrame, 300);
+					}
 					feed.style.display = 'block';
 	
 				} catch(error) {
