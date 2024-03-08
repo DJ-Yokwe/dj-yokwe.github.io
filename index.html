@@ -82,6 +82,12 @@
 	
 			OCRButton.addEventListener('click', function() {
 				const imageData = picture.toDataURL('image/png');
+				const roi = {
+					left:100,
+					top:50,
+					width:200,
+					height: 100,
+				};
 
 				const smallCanvas = document.createElement('canvas');
 				const smallContext = smallCanvas.getContext('2d');
@@ -91,6 +97,10 @@
 				smallCanvas.height = picture.height / 2;
 
 				smallContext.drawImage(picture, 0, 0, smallCanvas.width, smallCanvas.height);
+
+				smallContext.strokeStyle = 'red';
+				context.lineWidth = 2;
+				context.strokeRect(roi.left, roi.top, roi.width, roi.height);
 
 				document.getElementById('result').appendChild(smallCanvas);
 				
