@@ -102,9 +102,27 @@
 				smallContext.lineWidth = 2;
 				smallContext.strokeRect(roi.left, roi.top, roi.width, roi.height);
 
-				document.getElementById('result').appendChild(smallCanvas);
+				const croppedCanvas = document.createElement('canvas');
+				const croppedContext = croppedCanvas.getContext('2d');
+
+				croppedCanvas.width = roi.width;
+				croppedCanvas.height = roi.height;
+
+				croppedContext.drawImage(
+					smallCanvas,
+					roi.left,
+					roi.top,
+					roi.width,
+					roi.height,
+					0,
+					0,
+					roi.width,
+					roi.height
+				);
+
+				document.getElementById('result').appendChild(croppedCanvas);
 				
-				const resizedImage = smallCanvas.toDataURL('image/png');
+				const resizedImage = croppedCanvas.toDataURL('image/png');
 				
 				Tesseract.recognize(
 					resizedImage,
@@ -114,7 +132,6 @@
 						config: {
 							preserve_interword_spaces: '1',
 						},
-						rect: roi,
 					}
 				).then(({data:{text}}) => {
 					console.log('Result: ' + text);
