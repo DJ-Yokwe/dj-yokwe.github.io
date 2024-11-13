@@ -68,7 +68,7 @@ $(document).ready(function() {
 
   $('#prompt').on('change', function() {
   	prompt = $('#prompt').val();
-  }
+  });
   
   $(".test").click(function() {
     $("p").toggle();
