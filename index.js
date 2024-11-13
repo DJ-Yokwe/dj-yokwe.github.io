@@ -64,6 +64,11 @@
 $(document).ready(function() {
 
   var results;
+  var prompt;
+
+  $('#prompt').on('change', function() {
+  	prompt = $('#prompt').val();
+  }
   
   $(".test").click(function() {
     $("p").toggle();
@@ -83,7 +88,7 @@ $(document).ready(function() {
   
       const data = {
           model: "gpt-3.5-turbo",
-          messages: [{"role": "user", "content": "Who invented the airplane?"}],
+          messages: [{"role": "user", "content": prompt}],
           max_tokens: 100
           // You can customize other parameters like temperature, frequency_penalty, etc.
       };
